@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PrimerController;
+use App\Http\Controllers\TareasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +19,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('hola',[PrimerController::class,'index'])->name('hola');
+//Route::get('hola',[PrimerController::class,'index'])->name('hola');
+Route::get('tarea/registrar',[TareasController::class,'create'])->name('tarea.create');
+Route::post('tarea/guardar',[TareasController::class,'store'])->name('tarea.store');
